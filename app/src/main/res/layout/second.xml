@@ -1,11 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/idViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="60dp"
+            android:text="ID :" />
+
+        <EditText
+            android:id="@+id/idEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:maxLength="10"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/passwordViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password :"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="50dp"/>
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/checkpasswordViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="check password :"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="8dp"/>
+
+        <EditText
+            android:id="@+id/checkpasswordEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/nameViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름 :"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="46dp"/>
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/emailViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="38dp"/>
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/addressViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="주소 :"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="47dp"/>
+
+        <EditText
+            android:id="@+id/addressEditText1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/addressEditText2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="22dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="귀하의 개인 정보는 이 어플리케이션에 로그인하는데만 이용됩니다. 개인정보를 사용하는데 동의하시나요?"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/decline"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="거절"/>
+
+        <RadioButton
+            android:id="@+id/accept"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="동의"/>
+    </RadioGroup>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="저장"
-        android:id="@+id/save"/>
+        android:id="@+id/save"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"/>
 </LinearLayout>

@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" android:label="회원가입창"/>
+        <activity android:name=".thirdActivity" android:label="계산기"/>
     </application>
 
 </manifest>
