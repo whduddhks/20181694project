@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class SecondActivity extends Activity {
+import static com.cookandroid.a20181694project.MainActivity.idlist;
+import static com.cookandroid.a20181694project.MainActivity.passwordlist;
 
-    EditText passwordEditText = (EditText)findViewById(R.id.passwordEditText);
-    EditText checkpasswordEditText = (EditText)findViewById(R.id.checkpasswordEditText);
+public class SecondActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,23 +19,29 @@ public class SecondActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.second);
 
+        final EditText idEditText = (EditText)findViewById(R.id.idEditText);
+        final EditText passwordEditText = (EditText)findViewById(R.id.passwordEditText);
+        final EditText checkpasswordEditText = (EditText)findViewById(R.id.checkpasswordEditText);
+
         Button save = (Button) findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if(passwordEditText.getText().toString() == checkpasswordEditText.getText().toString()){
+                for(int i=0; i<idlist.size(); i++){
+                    if(idEditText.getText().toString().equals(idlist.get(i))){
+                        Toast.makeText(SecondActivity.this, "이미 존재하는 ID입니다.", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                if(passwordEditText.getText().toString().equals(checkpasswordEditText.getText().toString())){
+                    idlist.add(idEditText.getText().toString());
+                    passwordlist.add(passwordEditText.getText().toString());
                     Intent intent = new Intent(getApplicationContext(),
                             MainActivity.class);
                     startActivity(intent);
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "비밀번호가 일치하지 않습니다. 확인해주세요", Toast.LENGTH_SHORT);
+                    Toast.makeText(SecondActivity.this, "두 개의 비밀번호가 다릅니다.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 }
-
-//public class singinmanager{
-//    static final string userid = "user,db";
-//    static final string password = "password"
-//}
